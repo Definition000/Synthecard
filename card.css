@@ -1,0 +1,88 @@
+/* 在:root中添加 */
+:root {
+    /* 新增卡片相关变量 */
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-spacing: var(--spacing-base);
+    --card-elevation: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 卡片容器 */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: calc(var(--spacing-base) * 3);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: calc(var(--spacing-base) * 6) calc(var(--spacing-base) * 4);
+  }
+
+  .cards-container a{
+    text-decoration: none;
+  }
+  
+  /* 卡片优化 */
+  .card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: calc(var(--spacing-base) * 3);
+    box-shadow: var(--card-elevation);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .card strong {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    color: var(--accent-400);
+    margin-bottom: var(--spacing-base);
+    display: block;
+    transition: transform 0.3s ease;
+
+  }
+  
+  .card h3 {
+    font-size: 1.25rem;
+    margin-bottom: calc(var(--spacing-base) * 0.5);
+    color: var(--primary-900);
+    
+  }
+  
+  .card p {
+    color: var(--neutral-600);
+    line-height: 1.5;
+    margin-top: auto;
+
+  }
+
+  
+  /* 悬停交互优化 */
+  .card:hover {
+    transform: translateY(-8px) perspective(1000px) rotateX(5deg);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card:hover strong {
+    transform: scale(1.1);
+  }
+  
+  /* 响应式布局 */
+  @media (max-width: 1024px) {
+    .cards-container {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+    }
+  }
+  
+  /* 右侧布局调整 */
+  @media (min-width: 1280px) {
+    .cards-container {
+      position: absolute;
+      top: 50%;
+      right: calc(var(--spacing-base) * 4);
+      transform: translateY(-50%);
+      width: 50%;
+    }
+  }

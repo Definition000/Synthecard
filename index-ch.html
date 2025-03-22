@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="card.css">
+    <title>Synthecard - 知识卡片</title>
+   
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="logo.jpg" alt="Synthecard Logo">
+        </div>
+        <div class="nav-links">
+            <label for="language-select">
+                <span class="sr-only">选择语言</span>
+            </label>
+            <select id="language-select" class="nav-select" onchange="changeLanguage(this.value)">
+                <option value="index.html">English</option>
+                <option value="index-ch.html" selected>中文</option>
+            </select>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <h1>Synthecard</h1>
+        <h2>构建深度知识的认知框架</h2>
+
+        <section class="courses">
+            <div class="cards-container">
+              <a href="essay.html" class="card">
+                <strong>01</strong>
+                <h3>科技论文</h3>
+                <p>构建系统的认知框架</p>
+              </a>
+              <!-- 重复3个相同结构的card -->
+              <a href="#" class="card">
+                <strong></strong>
+                <h3>知识架构设计</h3>
+                <p>构建系统的认知框架</p>
+              </a>
+               <a href="#" class="card">
+                <strong>01</strong>
+                <h3>知识架构设计</h3>
+                <p>构建系统的认知框架</p>
+              </a> 
+              <a href="#" class="card">
+                <strong>01</strong>
+                <h3>知识架构设计</h3>
+                <p>构建系统的认知框架</p>
+              </a>
+            </div>
+            
+          </section>
+    </section>
+
+    <script>
+        function changeLanguage(language) {
+            window.location.href = language;
+        }
+    </script>
+</body>
+</html>
